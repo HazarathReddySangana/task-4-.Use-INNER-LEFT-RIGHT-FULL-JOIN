@@ -145,6 +145,6 @@ RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 <img width="593" height="516" alt="Image" src="https://github.com/user-attachments/assets/51725920-4a75-4252-ac6f-d996e67c9f8e" />
 <img width="827" height="542" alt="Image" src="https://github.com/user-attachments/assets/fad91f61-163f-436b-af5a-cb7a34b66fdf" />
 <img width="745" height="565" alt="Image" src="https://github.com/user-attachments/assets/04f8c22d-2398-4624-b044-fd3ced7df2b6" />
-<img width="676" height="902" alt="Image" src="https://github.com/user-attachments/assets/b16b0eb8-454f-440d-a3af-1bd900c84874" />
+
 
 ---
