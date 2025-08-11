@@ -1,0 +1,70 @@
+create database combine_data ;
+
+use combine_data ;
+
+-- Create Customers table
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CustomerName VARCHAR(50),
+    Country VARCHAR(50)
+);
+
+INSERT INTO Customers (CustomerID, CustomerName, Country) VALUES
+(1, 'John Smith', 'USA'),
+(2, 'Priya Sharma', 'India'),
+(3, 'Ahmed Khan', 'UAE'),
+(4, 'Maria Garcia', 'Spain'),
+(5, 'David Lee', 'Canada'),
+(6, 'Sara Ahmed', 'Egypt'),
+(7, 'Kenji Tanaka', 'Japan'),
+(8,'hazarath reddy','india'),
+(9, 'manoj','india'),
+(10,'sai','usa');
+
+select * from Customers;
+
+-- Create Orders table
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    Product VARCHAR(50),
+    Amount DECIMAL(10,2)
+);
+
+-- Insert more data into Orders
+INSERT INTO Orders (OrderID, CustomerID, Product, Amount) VALUES
+(101, 1, 'Laptop', 800),
+(102, 3, 'Phone', 500),
+(103, 4, 'Keyboard', 40),
+(104, 5, 'Tablet', 300),
+(105, 2, 'Headphones', 75),
+(106, 7, 'Monitor', 150),
+(107, 8, 'Mouse', 25),
+(108, 9, 'mobilephone',9000),
+(109, 6 ,'earbuds', 700);
+
+select * from Orders;
+
+-- INNER JOIN
+SELECT Customers.CustomerID, CustomerName, Product, Amount
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- LEFT JOIN
+SELECT Customers.CustomerID, CustomerName, Product, Amount
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- RIGHT JOIN
+SELECT Customers.CustomerID, CustomerName, Product, Amount
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- FULL OUTER JOIN (MySQL alternative using UNION)
+SELECT Customers.CustomerID, CustomerName, Product, Amount
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+UNION
+SELECT Customers.CustomerID, CustomerName, Product, Amount
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
